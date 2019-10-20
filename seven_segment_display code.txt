@@ -1,0 +1,214 @@
+#define a D0
+#define b D1
+#define c D2
+#define d D7
+#define e D4
+#define f D5
+#define g D6
+#define z D3
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(a,OUTPUT);
+  pinMode(b,OUTPUT);
+  pinMode(c,OUTPUT);
+  pinMode(d,OUTPUT);
+  pinMode(e,OUTPUT);
+  pinMode(f,OUTPUT);
+  pinMode(g,OUTPUT);
+  pinMode(z,INPUT);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void zero(){
+  digitalWrite(a,0);//0
+  digitalWrite(b,0);
+  digitalWrite(c,0);
+  digitalWrite(d,0);
+  digitalWrite(e,0);
+  digitalWrite(f,0);
+ 
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void one(){
+  digitalWrite(a,0);//1
+  digitalWrite(b,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+
+void two(){
+  digitalWrite(a,0);//2
+  digitalWrite(g,0);
+  digitalWrite(f,0);
+  digitalWrite(d,0);
+  digitalWrite(c,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void three(){
+  digitalWrite(a,0);//3
+  digitalWrite(g,0);
+  digitalWrite(b,0);
+  digitalWrite(f,0);
+  digitalWrite(c,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void four(){
+  digitalWrite(a,0);//4
+  digitalWrite(g,0);
+  digitalWrite(b,0);
+  digitalWrite(e,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void five(){
+  digitalWrite(e,0);//5
+  digitalWrite(g,0);
+  digitalWrite(b,0);
+  digitalWrite(f,0);
+  digitalWrite(c,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void six(){
+  digitalWrite(d,0);//6
+  digitalWrite(g,0);
+  digitalWrite(b,0);
+  digitalWrite(f,0);
+  digitalWrite(c,0);
+  digitalWrite(e,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void seven(){
+  digitalWrite(a,0);//7
+  digitalWrite(b,0);
+  digitalWrite(f,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void eight(){
+  digitalWrite(a,0);//8
+  digitalWrite(b,0);
+  digitalWrite(c,0);
+  digitalWrite(d,0);
+  digitalWrite(e,0);
+  digitalWrite(f,0);
+  digitalWrite(g,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void nine(){
+  digitalWrite(a,0);//9
+  digitalWrite(b,0);
+  digitalWrite(c,0);
+  digitalWrite(e,0);
+  digitalWrite(f,0);
+  digitalWrite(g,0);
+  delay(2000);
+  digitalWrite(a,HIGH);
+  digitalWrite(b,HIGH);
+  digitalWrite(c,HIGH);
+  digitalWrite(d,HIGH);
+  digitalWrite(e,HIGH);
+  digitalWrite(f,HIGH);
+  digitalWrite(g,HIGH);
+}
+void loop() {
+  int f=1;
+//  nine();
+//  eight();
+//  seven();
+//  six();
+//  five();
+//  four();
+//  three();
+//  two();
+//  one();
+//  zero();
+while(digitalRead(z)!=HIGH){
+  nine();
+  if(digitalRead(z)==HIGH) { f=0;   break;  
+  }
+  eight();
+  if(digitalRead(z)==HIGH) { f=0;   break;
+  }
+  seven();
+  six();
+  five();
+  four();
+  three();
+  two();
+  one();
+  zero();
+}
+if(f==0){
+  four();
+  three();
+  two();
+  one();
+  zero();
+}
+}
